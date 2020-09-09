@@ -1,0 +1,209 @@
+﻿@model ViewModels.ProductDetailViewModel
+@{
+    ViewBag.Title = Model.Product.TitleSrt;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="@ViewBag.HeaderImage" alt="Background" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-1 text--center">
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>@Model.Product.TitleSrt</h1>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ol class="breadcrumb">
+                        <li><a href="/">@Resources.Label.Home</a></li>
+                        <li class="active">@Model.Product.TitleSrt</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="product" class="shop shop-product bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12  col-md-9">
+
+
+                <div class="product-img mb-50">
+                    <img class="img-responsive" src="@Model.Product.ImageUrl" alt="@Model.Product.TitleSrt">
+                </div>
+                <div class="product-title">
+                    <h1>@Model.Product.TitleSrt</h1>
+                </div>
+
+                <div class="product-desc">
+                    @Html.Raw(Model.Product.BodySrt)
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 pro-features">
+                        @*<h2>
+                                 @Model.Product.TitleSrt
+                            </h2>*@
+                        <div class="accordion accordion-2" id="accordion02">
+                            <!-- Panel 01 -->
+                            @foreach (var feature in Model.ProductFeatures)
+							{
+                            <div class="panel">
+                                <div class="panel--heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#@feature.Code" href="#@feature.Code">@feature.KeySrt </a>
+                                </div>
+                                <div id="@feature.Code" class="panel--body panel-collapse collapse">
+                                    @feature.ValueSrt
+                            </div>
+                        </div>
+							}
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                @if (Model.ProductCounters.Count() > 0)
+                {
+                    <section id="statics" class="bg-white">
+                        <div class="col-md-12">
+                            @foreach (var number in Model.ProductCounters)
+                            {
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <div class="count-box text-center">
+                                        <div class="count-icon">
+                                            <i class="lnr @number.ValueEN"></i>
+                                        </div>
+                                        <div class="counting">@number.ValueSrt</div>
+                                        <div class="count-title">@number.KeySrt</div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </section>
+                }
+                <hr>
+
+
+
+                <div class="product-related shop-categories">
+                    <div class="product-related-title">
+                        <h5>@Resources.Label.OtherProducts</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="row">
+
+                        @foreach (var product in Model.RelatedProducts)
+                        {
+                            <div class="col-xs-12 col-sm-6 col-md-4 product-item">
+                                <div class="product--img">
+                                    <img src="@product.ThumbImageUrl" alt="@product.TitleSrt" />
+                                    <div class="product--hover">
+                                        <div class="product--action">
+                                            <a href="/product/@product.UrlParam">@Resources.Label.ShowProduct</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product--content">
+                                    <div class="product--title">
+                                        <h3><a href="/product/@product.UrlParam">@product.TitleSrt</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-12  col-md-3 sidebar-full">
+                <div class="widget widget-categories">
+                    <div class="widget--title">
+                        <h5>@Resources.Label.OtherProducts</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="widget--content">
+                        <ul class="list-unstyled">
+                            @foreach (var product in Model.SidebarProducts)
+                            {
+                                <li>
+                                    <a href="/product/@product.UrlParam"><i class="fa fa-arrow-left"></i> @product.TitleSrt</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="widget widget-recent-products">
+                    <div class="widget--title">
+                        <h5>@Resources.Label.LatestArticlesTitle</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="widget--content">
+                        <!-- Product #1 -->
+
+                        @foreach (var blog in Model.SidebarLatestBlog)
+                        {
+
+
+                            <div class="product clearfix">
+                                <img src="@blog.ImageUrl" alt="@blog.TitleSrt" height="70px" />
+                                <div class="product-desc">
+                                    <div class="product-title">
+                                        <a href="/blog/@blog.UrlParam">@blog.TitleSrt</a>
+                                    </div>
+                                    <div class="product-meta">
+                                        <span>@blog.CreationDateStr</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+                <div class="widget widget-tags">
+                    <div class="widget--title">
+                        <h5>@Resources.Label.SpecialProduct</h5>
+                    </div>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <div class="widget--content">
+                        <a href="/product/pos-software">
+                            <img src="~/assets/images/top-product.jpeg" class="img-responsive" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.accordion .panel:first-child .panel--body').addClass('in');
+            $('.accordion .panel:first-child .panel--heading .accordion-toggle').removeClass('collapsed');
+        });
+    </script>
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProshaSoft", "ProshaSoft\ProshaSoft.csproj", "{A768E0EB-D8BA-46C7-922D-E2D5D2B41577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{22E20191-06F4-47CE-B65C-CDCEAFB8D4C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A768E0EB-D8BA-46C7-922D-E2D5D2B41577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A768E0EB-D8BA-46C7-922D-E2D5D2B41577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A768E0EB-D8BA-46C7-922D-E2D5D2B41577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A768E0EB-D8BA-46C7-922D-E2D5D2B41577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E20191-06F4-47CE-B65C-CDCEAFB8D4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E20191-06F4-47CE-B65C-CDCEAFB8D4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E20191-06F4-47CE-B65C-CDCEAFB8D4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E20191-06F4-47CE-B65C-CDCEAFB8D4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8388CF85-EC9B-4C35-B1CF-B6AF4AD3D2C6}
+	EndGlobalSection
+EndGlobal

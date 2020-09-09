@@ -1,0 +1,80 @@
+﻿body {
+    font-family: 'Source Sans Pro',HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif !important;
+}
+body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td, .breadcrumbs-menu li, .contact-form button, .slider .slide--bio, .heading .heading--subtitle, .blog-entry .entry--meta {
+    font-family: 'Source Sans Pro',HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif !important;
+}
+.dir-ltr {
+    direction: ltr;
+}
+.cta h3 {
+    direction: ltr;
+}
+.list-unstyled li {
+    direction: ltr;
+    text-align:left;
+}
+.footer-widget .footer--widget-content p {
+    direction: ltr;
+}
+.heading .heading--desc {
+    direction: ltr;
+    text-align:justify;
+}
+.feature--icon
+{
+    text-align:left;
+}
+.feature--content {
+    direction: ltr;
+    text-align: justify;
+}
+.sliderl .flexslider .flex-caption
+{
+    direction:ltr;
+}
+.heading-font-p {
+    direction: ltr;
+    text-align: justify;
+}
+.heading-8 .divider--line
+{
+    margin-bottom:10px;
+}
+#hotspotImg .hot-spot .tooltip h5
+{
+    text-align:left;
+}
+#hotspotImg .hot-spot .tooltip p
+{
+    text-align:left;
+    direction:ltr;
+}
+    #hotspotImg .hot-spot .tooltip p i
+    {
+        margin-right:5px;
+    }
+.blog-entry .entry--title h4, .blog-entry .entry--content{
+    text-align: justify;
+    direction: ltr;
+}
+.blog-entry .entry--meta
+{
+    text-align:left;
+    direction:ltr;
+}
+.footer-widget .footer--widget-title h5
+{
+    text-align:left;
+}
+.footer--widget-content .entry{
+    text-align:left;
+}
+.about-detail-section p{
+    direction:ltr;
+    text-align:justify;
+}
+.about-detail-section {
+    direction: ltr;
+    text-align:left;
+}

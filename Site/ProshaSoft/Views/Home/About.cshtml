@@ -1,0 +1,167 @@
+﻿@model ViewModels.AboutViewModel
+@{
+    ViewBag.Title = Resources.Label.About;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="/assets/images/page-title/title-20.jpg" alt="@Resources.Label.About" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-1 text--center">
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>@Resources.Label.About</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="number1" class="number number-1 bg-white pb-100">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="text--center heading heading--2 mb-40">
+                    <p class="heading--subtitle">@Model.Aboutus.SummerySrt</p>
+                    <h2 class="heading--title">@Model.Aboutus.TitleSrt</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <p class="heading--desc">
+                        @Html.Raw(Model.Aboutus.BodySrt)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+	            <div class="timeline">
+		            @foreach (var historyText in Model.HistoryTexts)
+		            {
+			            <div class="timeline--item">
+				            <div class="timeline--item-date">@historyText.TitleSrt</div>
+				            <div class="timeline--item-content">
+					            <h3>@historyText.SummerySrt</h3>
+					            <p>@Html.Raw(historyText.BodySrt)</p>
+				            </div>
+			            </div>
+		            }
+	            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="process1" class="process-1">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="heading heading-2 text--center mb-50">
+                    <p class="heading--subtitle">@Model.StartWithProsha.TitleSrt</p>
+                    <h2 class="heading--title">@Model.StartWithProsha.SummerySrt</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <p class="heading--desc">@Html.Raw(Model.StartWithProsha.BodySrt)</p>
+                </div>
+            </div><!-- .col-md-8 end -->
+        </div><!-- .row end -->
+        <div class="row">
+            @{
+
+                for (int i = 1; i <= Model.MiddleBanner.Count; i++)
+                {
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="process-panel text--center">
+                            <div class="process-img">
+                                <img class="center-block" src="@Model.MiddleBanner[i-1].ImageUrl" alt="@Model.MiddleBanner[i-1].TitleSrt">
+                                <div class="process-overlay">
+                                    <i class="lnr lnr-warning"></i>
+                                </div>
+                            </div>
+                            <div class="process-content">
+                                <h3><span class="step">@i. </span>@Model.MiddleBanner[i-1].TitleSrt</h3>
+                                <p>@Html.Raw(Model.MiddleBanner[i-1].BodySrt)</p>
+                                <div class="process-divider">
+                                    <div class="divider--line">
+                                        <i class="divider divider--1"></i>
+                                        <i class="divider divider--2"></i>
+                                    </div>
+                                </div><!-- .process-divider end -->
+                            </div>
+                        </div><!-- .process-panel end -->
+
+                    </div><!-- .col-md-3 end -->
+                }
+            }
+        </div><!-- .row end -->
+    </div><!-- .container end -->
+</section>
+
+
+
+<section class="about-detail-section">
+    <div class="container">
+        <div class="row clearfix">
+            @foreach (var item in Model.Missions)
+            {
+                <div class="col-xs-12 col-sm-12 col-md-6 ">
+                    <h6>
+                        @item.TitleSrt
+                    </h6>
+                    <p>
+                       @Html.Raw(item.BodySrt)
+                    </p>
+                </div>
+            }
+           
+            @*<div class="col-xs-12 col-sm-12 col-md-6 ">
+                <h6>
+                    ماموریت
+                </h6>
+
+                <p>
+                    شرکت پروشا یک شرکت پیشرو در ارائه راهکارهای نوین در جهت سریعتر شدن و آسانتر شدن فرایند فروش و درخواست گیری برای شرکت های تامین کننده و سرعت بخشیدن و راحت تر کردن فرایند خرید برای مشتریان اقلام مصرفی در بازار توزیع و پخش کشورخواهد بود .این شرکت با هدف پاسخ به نیاز کنونی و آتی بازار و تغییر رفتار مصرف کنندگان ٬ و همچنین توسعه محصولات خود در راستای تولید ابزار های تخصصی نرم افزاری و راهکارهای نوین جهت تامین سود قابل قبول ذینفعان اقتصادی خود همواره تلاش خواهد نمود.
+                </p>
+            </div>*@
+
+        </div>
+        @*<div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-6 ">
+                <h6>
+                    چشم انداز
+                </h6>
+                <p>
+                    شرکت پروشا با هدف پوشش حداکثری شرکت های حوزه توزیع و پخش و تامین کننده در کل کشور تلاش خواهد نمود و طی پنج سال آینده در تلاش خواهد بود که همواره به سوی ارائه راهکارهای نوین و خلاقانه نرم افزاری در این حوزه اقدام نماید و به عنوان شرکت پیشرو در صنعت نرم افزار حوزه توزیع و پخش و تامین معرفی گردد. شرکت پروشا در تلاش خواهد بود که به عنوان سرمدار تغییر رفتار بازار و مصرف کننده در حوزه تامین اقلام مصرفی در تمامی صنایع مصرفی باشد و به عنوان قطب ارائه راهکارهای نرم افزاری و مشاوره کسب کار با روش های نوین در کشور ٬ یکتاز باشد .
+
+
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 ">
+                <h6>
+                    مسئولیت اجتماعی
+
+                </h6>
+
+                <p>
+                    گروه نرم افزاری پروشا کیفیت محصولات و ارائۀ کارآمدترین خدمات در امر پشتیبانی را سرلوحۀ پیشرفت و پیش شرط لازم برای خدمت رسانی به مشتریان خود قرارداده است. اعضای خانواده پروشا همواره تعهد خود در قبال محیط زیست، در قبال نیاز مشتریان، سازمان های مردم نهاد، حمایت از فارغ التحصیلان دانشگاهی و مراکز علمی پژوهشی را فراموش نخواهد کرد.
+
+
+                </p>
+            </div>
+        </div>*@
+    </div>
+</section>

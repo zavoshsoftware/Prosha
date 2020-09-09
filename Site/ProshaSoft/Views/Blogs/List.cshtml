@@ -1,0 +1,63 @@
+﻿@model ViewModels.BlogListViewModel
+@{
+    ViewBag.Title = Resources.Label.BlogContentList;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+ 
+
+<section id="page-title" class="page-title">
+	<div class="container-fluid bg-overlay bg-overlay-dark">
+		<div class="bg-section">
+			<img src="/assets/images/page-title/title-20.jpg" alt="Background" />
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="title title-1 text--center">
+					<div class="title--content">
+						<div class="title--heading">
+							<h1>@Resources.Label.BlogContentList</h1>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<ol class="breadcrumb">
+						<li><a href="/">@Resources.Label.Home</a></li>
+						<li class="active">@Resources.Label.BlogContentList</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="blog" class="blog blog-grid">
+	<div class="container">
+		<div class="row">
+		@foreach (var blog in Model.Blogs)
+		{
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="blog-entry">
+					<div class="entry--img">
+						<a href="/blog/@blog.UrlParam">
+							<img src="@blog.ImageUrl" alt="@blog.TitleSrt" />
+						</a>
+					</div>
+					<div class="entry--meta">
+						<span>@blog.CreationDateStr</span>   /
+						<span><a href="#">@blog.Visit @Resources.Label.Visit</a></span>
+					</div>
+					<div class="entry--title">
+						<h4><a href="/blog/@blog.UrlParam">@blog.TitleSrt</a></h4>
+					</div>
+					<div class="entry--content">
+						@blog.SummerySrt
+					</div>
+					<div class="entry--more">
+						<a href="/blog/@blog.UrlParam">@Resources.Label.ReadMore</a>
+					</div>
+				</div>
+			</div>
+		}
+		</div>
+	</div>
+</section>

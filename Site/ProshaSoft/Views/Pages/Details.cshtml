@@ -1,0 +1,84 @@
+﻿@model ViewModels.PageDetailsViewModel
+
+@{
+    ViewBag.Title = Model.Page.TitleSrt;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+
+<section id="page-title" class="page-title">
+    <div class="container-fluid bg-overlay bg-overlay-dark">
+        <div class="bg-section">
+            <img src="@ViewBag.HeaderImage" alt="Background" />
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="title title-1 text--center">
+                    <div class="title--content">
+                        <div class="title--heading">
+                            <h1>@Model.Page.TitleSrt</h1>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <ol class="breadcrumb">
+                        <li><a href="/">@Resources.Label.Home</a></li>
+                        <li><a href="/blog">@Resources.Label.BlogContentList</a></li>
+                        <li class="active">@Model.Page.TitleSrt</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="blog blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <!-- Blog Entry -->
+                <div class="blog-entry">
+                    <div class="entry--img">
+                        <a href="#">
+                            <img src="@Model.Page.ImageUrl" alt="@Model.Page.TitleSrt" />
+                        </a>
+
+                    </div>
+                    @*<div class="entry--meta">
+                            <span>@Model.Page.CreationDate</span> / <span>@Resources.Label.Comment <a href="#">@Model.CommentCount</a></span> /
+                            <span>@Resources.Label.Visit <a href="#">@Model.Page.Visit</a></span>
+                        </div>*@
+                    <div class="entry--title">
+                        <h4><a href="#">@Model.Page.TitleSrt</a></h4>
+                    </div>
+                    <div class="entry--content">
+                        @Html.Raw(Model.Page.BodySrt)
+                    </div>
+                    <div class="entry--share">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <h5 class="share--title">@Resources.Label.ShareArticle </h5>
+                            </div>
+                            <!-- .col-md-6 end -->
+                            <div class="col-xs-12 col-sm-12 col-md-6 pull-right text-right">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section>
+
+@section scripts
+{
+    <script src="~/Scripts/custom.js"></script>
+}

@@ -1,0 +1,87 @@
+﻿@model ViewModels.SubmitOrderViewModel
+@{
+    ViewBag.Title = "Submit";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+    <div class="container text-center">
+        <h1>Contact</h1>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="left pull-left">
+            <a href="/SubmitOrder">Order</a>
+        </div>
+        <div class="right pull-right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li>Order</li>
+            </ul>
+        </div>
+    </div>
+</section>
+@using (Html.BeginForm("Submit", "Orders", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <section class="contact-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="send-message-form">
+                        <div class="title">
+                            <h2>SUBMIT ORDER</h2>
+                            <span class="border"></span>
+                        </div>
+                        <h3>PLEASE FILLING THE FORM:</h3>
+                        <div class="contact-form">
+                            @if (ViewBag.success == "false")
+                            {
+                                <div class="alert alert-danger"> an error occurred.</div>
+                            }
+                            else if (ViewBag.success == "email")
+                            {
+                                <div class="alert alert-danger">Email is not correct</div>
+                            }
+                            else if (ViewBag.success == "true")
+                            {
+                                <div class="alert alert-success">Tanks. your Order submited successfully</div>
+                            }
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.Order.FullName, new { @placeholder = "Your Name*" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.Order.Country, new { @placeholder = "Your country*" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.Order.Email, new { @placeholder = "Your Mail*" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.Order.CellNumber, new { @placeholder = "Your Num" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    @Html.TextAreaFor(model => model.Order.Description, new { @placeholder = "Write Your Description..." })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="thm-btn yellow-bg btn-submit" type="submit" id="submit" value="SUBMIT" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

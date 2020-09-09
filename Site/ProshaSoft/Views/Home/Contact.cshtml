@@ -1,0 +1,99 @@
+﻿@model ViewModels.ContactViewModel
+@{
+	ViewBag.Title = Resources.Label.Contact;
+	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section id="page-title" class="page-title">
+	<div class="container-fluid bg-overlay bg-overlay-dark">
+		<div class="bg-section">
+			<img src="/assets/images/page-title/title-20.jpg" alt="@Resources.Label.Contact" />
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="title title-1 text--center">
+					<div class="title--content">
+						<div class="title--heading">
+							<h1>@Resources.Label.Contact</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="contact1" class="contact contact-1 bg-white pb-0">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="contact-form">
+					<div class="mb-0">
+						<div class="row">
+							<div class="alert alert-success" id="comment-succes">پیغام شما با موفقیت ثبت گردید و همکاران ما در اسرع وقت به آن رسیدگی خواهند کرد.</div>
+							<div class="alert alert-danger" id="comment-reject"></div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="contact-name" placeholder="@Resources.Label.FirstName" required>
+							</div>
+							<div class="col-md-6">
+								<input type="email" class="form-control" id="contact-email" placeholder="@Resources.Label.Email" required>
+							</div>
+							<div class="col-md-12">
+								<textarea class="form-control" id="contact-message" rows="2" placeholder="@Resources.Label.Comment" required></textarea>
+							</div>
+							<div class="col-md-12">
+								<input type="button" value="@Resources.Label.SendMessage" onclick="SubmitContactUs();" class="btn btn--secondary btn--block">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="row mb-50">
+					<div class="col-xs-12 col-sm-12 col-md-6">
+						<div class="contact--info">
+							<h3>@Resources.Label.Address</h3>
+							@Html.Raw(Model.Address)
+						</div>
+					</div><!-- .col-md-6 end -->
+					<div class="col-xs-12 col-sm-12 col-md-6">
+						<div class="contact--info">
+							<h3>@Resources.Label.Phone</h3>
+							@Html.Raw(Model.Phone)
+
+						</div>
+					</div><!-- .col-md-6 end -->
+				</div><!-- .row end -->
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-6">
+						<div class="contact--info">
+							<h3>@Resources.Label.Email</h3>
+							@Html.Raw(Model.Email)
+
+						</div>
+					</div><!-- .col-md-6 end -->
+					<div class="col-xs-12 col-sm-12 col-md-6">
+						<div class="contact--info">
+							<h3>@Resources.Label.WorkingHours</h3>
+							@Html.Raw(Model.WorkTime)
+
+						</div>
+					</div><!-- .col-md-6 end -->
+				</div>
+			</div>
+
+            
+		</div>
+	</div>
+    <div class="row pt-90">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3237.927339760016!2d51.44937326511351!3d35.75259063017776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z2KrZh9ix2KfZhtiMINm-2KfYs9iv2KfYsdin2YbYjCDYs9ix2YjYs9iq2KfZhg!5e0!3m2!1sen!2s!4v1592656014647!5m2!1sen!2s" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</section>
+
+@section scripts
+{
+	<script src="~/Scripts/custom.js"></script>
+}

@@ -1,0 +1,20 @@
+﻿body {
+}
+.k-dateinput.k-state-disabled > .k-textbox:hover, .k-maskedtextbox.k-state-disabled > .k-textbox:hover, .k-multiselect.k-header, input.k-textbox, textarea.k-textbox {
+    width: 50%;
+    min-height: 35px;
+}
+.multi-line {
+    width: 50%;
+    min-height: 50px;
+}
+select {
+    width: 50%;
+    min-height: 35px;
+    border-color: #c5c5c5;
+    border-radius: 4px;
+}
+html .k-upload
+{
+    width:50%;
+}

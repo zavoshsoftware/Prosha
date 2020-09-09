@@ -1,0 +1,474 @@
+﻿@model ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = Resources.Label.Home;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<section id="slider" class="slider slider-overlay-dark">
+    <!-- START REVOLUTION SLIDER 5.0 -->
+    <div class="rev_slider_wrapper">
+        <div id="slider1" class="rev_slider" data-version="5.0">
+            <ul>
+
+                @foreach (var slider in Model.Sliders)
+                {
+                    <li data-transition="zoomout"
+                        data-slotamount="default"
+                        data-easein="Power4.easeInOut"
+                        data-easeout="Power4.easeInOut"
+                        data-masterspeed="2000">
+                        <!-- MAIN IMAGE -->
+                        <img src="@slider.ImageUrl" alt="@slider.TitleSrt" width="1920" height="1280">
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption"
+                             data-x="center" data-hoffset="0"
+                             data-y="center" data-voffset="-65"
+                             data-whitespace="nowrap"
+                             data-width="none"
+                             data-height="none"
+                             data-transform_idle="o:1;"
+                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                             data-start="750"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-responsive_offset="on">
+                            <div class="slide--headline text-center">@slider.TitleSrt</div>
+                        </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption"
+                             data-x="center" data-hoffset="0"
+                             data-y="center" data-voffset="50"
+                             data-width="none"
+                             data-height="none"
+                             data-transform_idle="o:1;"
+                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
+                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+                             data-start="1000"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-responsive_offset="on">
+                            <div class="slide--bio text-center">
+                                @slider.SummarySrt
+                            </div>
+                        </div>
+
+                        <!-- LAYER NR. 3 -->
+                        @if (slider.IsVideoLink)
+                        {
+	                        if (!string.IsNullOrEmpty(slider.LinkTitleSrt))
+	                        {
+		                        <div class="tp-caption"
+		                             id="slide-163-layer-6"
+		                             data-x="center" data-hoffset="0"
+		                             data-y="center" data-voffset="130"
+		                             data-width="none"
+		                             data-height="none"
+		                             data-whitespace="nowrap"
+		                             data-transform_idle="o:1;"
+		                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+		                             data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+		                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+		                             data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+		                             data-mask_out="x:inherit;y:inherit;"
+		                             data-start="1250"
+		                             data-splitin="none"
+		                             data-splitout="none"
+		                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+		                             data-basealign="slide"
+		                             data-responsive_offset="on"
+		                             data-responsive="off">
+			                        <div class="slide-action">
+				                        <a class="btn btn--video popup-video" href="@slider.LinkAddress"><i class="icon icon-Play"></i>@slider.LinkTitleSrt</a>
+			                        </div>
+		                        </div>
+	                        }
+                        }
+                        else
+                        {
+	                        if (!string.IsNullOrEmpty(slider.LinkTitleSrt))
+	                        {
+	                        <div class="tp-caption"
+	                             id="slide-163-layer-6"
+	                             data-x="center" data-hoffset="0"
+	                             data-y="center" data-voffset="130"
+	                             data-width="none"
+	                             data-height="none"
+	                             data-whitespace="nowrap"
+	                             data-transform_idle="o:1;"
+	                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
+	                             data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
+	                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+	                             data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+	                             data-mask_out="x:inherit;y:inherit;"
+	                             data-start="1250"
+	                             data-splitin="none"
+	                             data-splitout="none"
+	                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
+	                             data-basealign="slide"
+	                             data-responsive_offset="on"
+	                             data-responsive="off">
+		                        <div class="slide-action">
+			                        <a class="btn btn--slide btn--secondary btn--white" href="@slider.LinkAddress">@slider.LinkTitleSrt</a>
+		                        </div>
+	                        </div>
+                        }
+                        }
+                    </li>
+                }
+
+
+            </ul>
+        </div>
+        <!-- END REVOLUTION SLIDER -->
+    </div>
+    <!-- END OF SLIDER WRAPPER -->
+</section>
+<!-- #hero end -->
+<!-- Heading #1
+============================================= -->
+<section id="heading1" class="bg-white heading heading-1 pb-100">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="text--center">
+                    <img class="heading--img" src="/assets/images/heading/heading-icon.png" alt="heading img" />
+                    <p class="heading--subtitle">@Model.About.SummerySrt</p>
+                    <h2 class="heading--title">@Model.About.TitleSrt</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <p class="heading--desc">@Html.Raw(Model.About.BodySrt)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="banner3" class="skills skills-2 pt-0 pb-0">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-6 pr-0 pl-0">
+                <div class="col-img col-laptop-img  bg-overlay  laptop-app" id="main" role="main">
+                    <section class="slider sliderf sliderl">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                @foreach (var slider in Model.DesktopSliders)
+                                {
+                                    <li>
+                                        <img src="@slider.ImageUrl" alt="@slider.Alt" />
+                                        <p class="flex-caption">@slider.TitleSrt</p>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+                @*<div class="col-img  bg-overlay">
+                        <div class="bg-section">
+                            <img src="@Model.FeaturImage.ImageUrl" alt="@Model.FeaturImage.Title" />
+                        </div>
+                    </div>*@
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-content pl-100 features-home">
+                <div class="row">
+                    @foreach (var featuresText in Model.FeaturesTexts)
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-6 mb-50">
+                            <div class="feature-panel">
+                                <div class="feature--icon">
+                                    <i class="lnr @featuresText.SummerySrt"></i>
+                                </div>
+                                <div class="feature--content">
+                                    <h3>
+                                        @featuresText.TitleSrt
+                                    </h3>
+                                    @Html.Raw(featuresText.BodySrt)
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="banner4" class="skills skills-2 pt-0 pb-0">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-content pl-100 features-home">
+                <div class="heading heading-8 mb-50 heading-font-p">
+                    <h2 class="heading--title">@Model.PosInfo.TitleSrt</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    @Html.Raw(Model.PosInfo.BodySrt)
+
+                    <a href="/product/pos-software" class="btn btn--primary btn--bordered btn--block">@Resources.Label.ShowFeatures</a>
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 pr-0 pl-0">
+                <div class="col-img  bg-overlay  mobile-app" id="main" role="main">
+                    <section class="slider sliderf">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                @foreach (var slider in Model.MiniSliders)
+                                {
+                                    <li>
+                                        <img src="@slider.ImageUrl" alt="@slider.Alt" />
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section id="counter1" class="counter bg-white">
+    <div class="container">
+        <div class="row">
+            <div id="hotspotImg" class="responsive-hotspot-wrap row col-md-7">
+                <img src="~/assets/images/map31.png" class="img-responsive" alt="" width="620" height="220" />
+
+                @foreach (var mapDetail in Model.MapDetails)
+                {
+                    <div class="hot-spot" x="@mapDetail.X" y="@mapDetail.Y">
+                        <div class="circle"></div>
+                        <div class="tooltip">
+                            <div class="text-row">
+                                <h5>@mapDetail.TitleSrt</h5>
+                                @if (!string.IsNullOrEmpty(mapDetail.FirstLineSrt))
+                                {
+                                    <p><i class="fa fa-users"></i>@mapDetail.FirstLineSrt</p>
+                                }
+                                @if (!string.IsNullOrEmpty(mapDetail.SecondtLineSrt))
+                                {
+                                    <p><i class="fa fa-compass"></i>@mapDetail.SecondtLineSrt</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-5 features-home">
+                <div class="heading heading-8 mb-50 heading-font-p">
+                    <h2 class="heading--title">@Model.MapDescription.TitleSrt</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    @Html.Raw(Model.MapDescription.BodySrt)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="clients" class="clients clients-carousel bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="carousel carousel-dots" data-slide="6" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="false" data-space="30" data-loop="true" data-speed="800">
+                    @foreach (var customer in Model.Costumers)
+                    {
+                        <div class="client">
+                            <img class="center-block" src="@customer.ImageUrl" alt="@customer.Alt">
+                        </div>
+                    }
+
+                </div>
+            </div><!-- .col-md-12 end -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section>
+<section id="statics" class="bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var number in Model.Numbers)
+                {
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="count-box text-center">
+                            <div class="count-icon">
+                                <i class="lnr @number.SummerySrt"></i>
+                            </div>
+                            <div class="counting">@number.Body</div>
+                            <div class="count-title">@number.TitleSrt</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<section id="blog" class="blog blog-carousel">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+                <div class="heading heading-2 mb-40 text--center">
+                    <p class="heading--subtitle">@Resources.Label.HomeArticle</p>
+                    <h2 class="heading--title">@Resources.Label.LatestArticles</h2>
+                    <div class="divider--line">
+                        <i class="divider divider--1"></i>
+                        <i class="divider divider--2"></i>
+                        <i class="divider divider--3"></i>
+                        <i class="divider divider--4"></i>
+                    </div>
+                    <p class="heading--desc">@Resources.Label.LatestArticlesTitle</p>
+                </div>
+            </div><!-- .col-md-8 end -->
+        </div>
+        <div class="row">
+            <div class="carousel carousel-dots" data-slide="3" data-slide-res="2" data-autoplay="true" data-nav="false" data-dots="true" data-space="30" data-loop="true" data-speed="800">
+
+                @foreach (var blog in Model.LatestBlogs)
+                {
+
+
+                    <div class="blog-entry">
+                        <div class="entry--img">
+	                        <a href="/blog/@blog.UrlParam">
+		                        @if (string.IsNullOrEmpty(blog.ImageUrlThumb))
+		                        {
+			                        <img src="@blog.ImageUrl" alt="@blog.TitleSrt"/>
+														}
+														else
+														{
+																<img src="@blog.ImageUrlThumb" alt="@blog.TitleSrt" />
+														}
+	                        </a>
+                        </div>
+                        <div class="entry--meta">
+                            <span>@blog.CreationDateStr</span>   /
+                            <span><a href="#">@blog.Visit @Resources.Label.Visit</a></span>
+                        </div>
+                        <div class="entry--title">
+                            <h4><a href="/blog/@blog.UrlParam">@blog.TitleSrt</a></h4>
+                        </div>
+                        <div class="entry--content">
+                            @blog.SummerySrt
+                        </div>
+                        <div class="entry--more">
+                            <a href="/blog/@blog.UrlParam">@Resources.Label.ReadMore</a>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cta1" class="cta cta-1 bg-overlay bg-overlay-theme">
+    <div class="bg-section">
+        <img src="/assets/images/cta/cta-1.jpg" alt="Background" />
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-md-6 ">
+                <a class="btn btn--white btn--bordered" href="#">@Resources.Label.ReadMore</a>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 text-right footer-slogan">
+                <h3>@Resources.Label.TopFooter</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    <!-- RS5.0 Core JS Files -->
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <!-- RS Configration JS Files -->
+    <script src="/assets/js/rsconfig.js"></script>
+    <script src="~/assets/js/jquery.hotspot.js"></script>
+    <script src="~/assets/js/demo.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+
+
+
+    </script>
+    <script defer src="/assets/js/jquery.flexslider.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Syntax Highlighter -->
+    <script type="text/javascript" src="/assets/js/shCore.js"></script>
+    <script type="text/javascript" src="/assets/js/shBrushXml.js"></script>
+    <script type="text/javascript" src="/assets/js/shBrushJScript.js"></script>
+
+    <!-- Optional FlexSlider Additions -->
+    <script src="/assets/js/jquery.easing.js"></script>
+    <script src="/assets/js/jquery.mousewheel.js"></script>
+    <script defer src="~/assets/js/demo-flex.js"></script>
+}
