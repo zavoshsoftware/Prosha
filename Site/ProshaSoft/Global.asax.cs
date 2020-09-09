@@ -24,7 +24,7 @@ namespace ProshaSoft
             if (!Context.Request.IsSecureConnection)
                 Response.Redirect(Context.Request.Url.ToString().Replace("http:", "https:"));
 
-          
+
         }
         private const string LanguageCookieName = "MyLanguageCookieName";
         protected void ExecuteCore()

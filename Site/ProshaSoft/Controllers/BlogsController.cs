@@ -65,6 +65,9 @@ namespace ProshaSoft.Controllers
             {
                 ViewBag.HeaderImage = blog.HeaderImageUrl;
             }
+
+            blog.Visit = blog.Visit + 1;
+            db.SaveChanges();
             return View(viewModel);
         }
 
@@ -84,6 +87,7 @@ namespace ProshaSoft.Controllers
         {
             if (ModelState.IsValid)
             {
+                blog.Visit = 0;
                 #region Upload and resize image if needed
                 if (fileupload != null)
                 {
