@@ -316,6 +316,7 @@
     <Content Include="assets\images\landing\demos\9.jpg" />
     <Content Include="assets\images\landing\demos\footer.jpg" />
     <Content Include="assets\images\logo-anjooman-senfi.jpg" />
+    <Content Include="assets\images\logo\favicon.png" />
     <Content Include="assets\images\logo\logo.png" />
     <Content Include="assets\images\logo\logo-dark.png" />
     <Content Include="assets\images\logo\logo-light.png" />

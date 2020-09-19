@@ -8323,3 +8323,7 @@ a.link--styled:hover::after {
 .blog-entry .entry--content {
     min-height: 100px;
 }
+
+.blog-entry .entry--title h4 {
+    min-height: 50px;
+}
