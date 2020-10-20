@@ -63,16 +63,15 @@ namespace Helpers
                 result.Add(new PageGroupsMenu()
                 {
                     PageGroup = item,
-                    Pages = db.Pages.Where(current => current.IsDeleted == false && current.IsActive == true &&
-                    current.PageGroupId == item.Id).ToList()
+                    Pages = db.Pages.Where(current => current.PageGroupId == item.Id&& current.IsDeleted == false && current.IsActive).OrderBy(c => c.Order).ToList()
                 });
             }
             return result;
         }
         public List<Page> GetPages()
         {
-            return db.Pages.Where(current => current.IsDeleted == false && current.IsActive == true &&
-                    current.PageGroupId == null).ToList();
+            return db.Pages.Where(current => current.IsDeleted == false && current.IsActive  &&
+                    current.PageGroupId == null).OrderBy(c => c.Order).ToList();
         }
     }
 }
