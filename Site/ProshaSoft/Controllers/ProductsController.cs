@@ -224,6 +224,9 @@ namespace ProshaSoft.Controllers
         [Route("product/{urlParam}")]
         public ActionResult Details(string urlParam)
         {
+            if (urlParam == "دریافت-اپلیکیشن-pos")
+                return RedirectPermanent("/app");
+
             Product product = db.Products.FirstOrDefault(c => c.UrlParam == urlParam && c.IsDeleted == false);
 
             if (product == null)
